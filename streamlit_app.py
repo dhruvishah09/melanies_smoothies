@@ -1,6 +1,5 @@
-# Import python packages
+
 import streamlit as st
-# from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col
 import requests
 import pandas as pd
@@ -37,8 +36,14 @@ if ingredients_list:
         st.write('The search value for ', fruit_chosen,' is ', search_on, '.')
         
         st.subheader(fruit_chosen + 'Nutrition Information')
+
         fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_chosen)
         fv_df = st.dataframe(data=fruityvice_response.json(), use_container_width=True)
+
+        
+        
+       
+        
 
 
     #st.write(ingredients_string)
